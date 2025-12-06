@@ -3,7 +3,6 @@ import json
 
 from get_data import get_data
 from clean import clean_data, fix_times
-from change_data import fix_times
 
 def main():
     raw_data = get_data() # will later add sys as arguments
