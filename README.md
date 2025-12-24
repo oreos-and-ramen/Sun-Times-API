@@ -5,5 +5,5 @@ The finished and polished version of the RESTful Coding Challenge
 
 In order to run the code, please type into the terminal:
 ```
-$ python src/main.py
+$ python src/main.py FORECAST [VARIABLES]
 ```
