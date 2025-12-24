@@ -1,11 +1,14 @@
 import sys
 
+RED = "\033[31m"
+RESET = "\033[0m"
+
 hourly = """main.py hourly [VARIABLES]
         Presents weather information by the hour of the next 7 days
         VARIABLES  Specify what information to display as variables (default VARIABLES=precipitation_percentage)
         all seperated by commas only"""
 
-hourly_vars = """        - precipitations percentage"""
+hourly_vars = """        - precipitation_percentage"""
 
 daily = """main.py daily [VARIABLES]
         Presents weather information by the day for the next 7 days
@@ -19,7 +22,7 @@ def usage(error=None, tool=None):
 
     # print any error message as requested
     if error is not None:
-        print(f"Error: {error}\n", file=sys.stderr)
+        print(f"{RED}Error: {error}{RESET}\n", file=sys.stderr)
 
     if tool == "hourly":
         print(f"{hourly}", file=sys.stderr)
@@ -27,7 +30,7 @@ def usage(error=None, tool=None):
         print(f"{daily}", file=sys.stderr)
     else:
         print(
-            "\nWeather Forecast Options:\n=========================",
+            "Weather Forecast Options:\n=========================",
             hourly,
             hourly_vars,
             daily,
